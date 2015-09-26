@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>985896ae-0f8b-4610-bbeb-7e7fffbcd9da</ProjectGuid>
+    <Name>PM</Name>
+    <avrdevice>at90usb1286</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <AvrProjectType>Importer</AvrProjectType>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>PM</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <avrtool />
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.0</AsfVersion>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <BootSegment>2</BootSegment>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.5.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'default' ">
+    <OutputPath>bin\default\</OutputPath>
+    <UsesExternalMakeFile>False</UsesExternalMakeFile>
+    <ExternalMakeFilePath>makefile</ExternalMakeFilePath>
+    <OutputFileName>PM</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputType>Executable</OutputType>
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>BOARD=BOARD_NONE</Value>
+            <Value>F_CPU=16000000</Value>
+            <Value>F_USB=F_CPU</Value>
+            <Value>ARCH=AVR8</Value>
+            <Value>MCU=at90usb1286</Value>
+            <Value>USB_DEVICE_ONLY</Value>
+            <Value>DEVICE_STATE_AS_GPIOR=0</Value>
+            <Value>ORDERED_EP_CONFIG</Value>
+            <Value>FIXED_CONTROL_ENDPOINT_SIZE=8</Value>
+            <Value>FIXED_NUM_CONFIGURATIONS=1</Value>
+            <Value>USE_FLASH_DESCRIPTORS</Value>
+            <Value>USE_STATIC_OPTIONS="(USB_DEVICE_OPT_FULLSPEED | USB_OPT_REG_ENABLED | USB_OPT_AUTO_PLL)"</Value>
+            <Value>INTERRUPT_CONTROL_ENDPOINT</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../AVRLIB</Value>
+            <Value>..</Value>
+            <Value>../USB_serial</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-gdwarf-2 -std=gnu99</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,-u,vfprintf -lprintf_flt</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-Wall -gdwarf-2 -std=gnu99 -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums</avrgcc.assembler.general.AssemblerFlags>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+  <ItemGroup>
+    <Compile Include="AVRLIB\avrlibdefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRLIB\avrlibtypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRLIB\global.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRLIB\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRLIB\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRLIB\lcdconf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LUFA_SPI_TWI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LUFA_SPI_TWI\TWI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LUFA_SPI_TWI\TWI_AVR8.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM_PowerSWR_Meter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM_PowerImpedance_Meter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM_ADC_and_I2C.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM_Print_Format_Functions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM_USBSerial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="USB_serial\usb_serial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="USB_serial\usb_serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="AVRLIB" />
+    <Compile Include="analog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="LUFA_SPI_TWI" />
+    <Folder Include="USB_serial" />
+    <Compile Include="PM.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="PM_Display_Functions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PM_Encoder.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="PM_PushButtonMenu.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="PM_LCD_Bargraph_Lowlevel.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
